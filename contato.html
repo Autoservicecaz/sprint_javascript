@@ -48,7 +48,15 @@
                     <option>TELEFONE</option>
                     <option>E-MAIL</option>
                 </select>
-            <button type="submit">Enviar</button>
+                <div class="consentimento">
+                <p>Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você. A
+qualquer momento, será possível editar ou remover tais dados.</p>
+                <label><input type="checkbox" id="checkbox1">Sim. Li e concordo com os<a href="https://www.ford.com.br/politica-de-privacidade/
+" target="_blank">Termos e condiçoes.</a></label>
+                <label><input type="checkbox" id="checkbox2">Sim. Também quero receber descontos e novidades.</label>
+                </div><br><br>
+            <button id="enviar" type="submit" disabled>Enviar</button>
+            
             </form>
             </div>
         </div>
@@ -65,6 +73,11 @@
         <div>
            <img src="img/ford-96.png" width="70"  />
         </div>
-    </footer>    
+    </footer> 
+    <script>
+        const checkbox1 = document.getElementById("checkbox1");
+        const botao = document.getElementById("enviar");
+        checkbox1.addEventListener("change", () => {botao.disabled = !checkbox1.checked;});
+    </script>   
 </body>
 </html>
